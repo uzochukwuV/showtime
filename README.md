@@ -22,3 +22,5 @@ yarn create next-app --example custom-server custom-server-app
 # or
 pnpm create next-app --example custom-server custom-server-app
 ```
+## Error encountered
+set access control headers, authorization
