@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
-import ECardSkeleton from "./loading/eventcard_loading";
+
 
 
 function EventCard(props: {image: string}) {
