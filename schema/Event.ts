@@ -54,11 +54,11 @@ export const EventMutation = extendType({
                 name: nonNull(stringArg()),
                 date: nonNull(stringArg()),
                 ticketFee: nonNull(intArg()),
-                location: nonNull(stringArg())
+                
             },
            async resolve(parent, args, context, info){
                 const location = await context.prisma.location.findFirst({where: {name: args.location}});
-                return await context.prisma.event.create({data: {...args, subcategory:null}}) as any;
+                return await context.prisma.event.create({data: {...args, subcategory:null, location:null}}) as any;
             }
         })
     },
