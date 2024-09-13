@@ -10,6 +10,9 @@ import HorizontalScroll from "../components/horizontalScroll";
 import Preview from "../components/preview";
 import DownloadModal from "../components/modals/download";
 import Footer from "../components/footer";
+
+
+
  
 const inter = Inter({
   variable: '--font-inter',
@@ -17,7 +20,11 @@ const inter = Inter({
 })
 
 
-export default function Home() {
+
+
+
+export default  function Home() {
+ 
   
   return (
     <div

@@ -6,9 +6,9 @@ function DownloadModal(props: {pop: boolean, setPop: (x:boolean)=> void }) {
     const {pop, setPop} = props
 
     return (
-    <section className={` fixed top-0 transition-all duration-100 ease-out right-0 left-0 bottom-0 bg-black/70 z-50 ${pop ? " opacity-1": "opacity-0 -z-50"} `}>
+    <section className={` fixed top-0 transition-all duration-100 ease-out right-0 left-0 bottom-0 bg-black/70 z-50 ${pop ? " opacity-1": "opacity-0 hidden"} `}>
       <div className="relative h-full w-full">
-        <div className="absolute top-0 left-0 right-0 bottom-0" onClick={()=>setPop(false)}></div>
+        <div className={`absolute top-0 left-0 right-0 bottom-0 ${pop ? "": "hidden"} `} onClick={()=>setPop(false)}></div>
         <div className={` absolute w-full space-y-4 top-[50%] max-w-[440px] transition-all duration-200 bg-[#1c1c28] left-[50%] -translate-x-[50%] p-6 -translate-y-[50%]  ${pop ? " scale-100": " scale-0"}  `}>
             <div className="cancel flex justify-end pb-4">
                 <button className=" bg-transparent outline-none border-none">

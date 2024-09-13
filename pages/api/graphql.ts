@@ -1,52 +1,28 @@
 import {makeSchema, objectType, queryType} from "nexus"
 import { ApolloServer } from "apollo-server-micro"
 import { NextApiRequest, NextApiResponse } from "next";
+import { context } from "../../lib/client";
+import { join } from "path";
+import * as types from "../../schema/index"
 
-
-
-
-export const Framework = objectType({
-    name: 'Framework',
-    definition(t) {
-      t.id('id')
-      t.string('name')
-    },
-  })
-  export const Query = queryType({
-    definition(t) {
-      t.list.field('frameworks', {
-        type: 'Framework',
-        resolve: () => {
-          return [
-            {
-              id: '1',
-              name: 'React',
-            },
-            {
-              id: '2',
-              name: 'Vue',
-            },
-            {
-              id: '3',
-              name: 'Angular',
-            },
-            {
-              id: '4',
-              name: 'Svelte',
-            },
-          ]
-        },
-      })
-    },
-  })
 
 export const schema = makeSchema({
-    types: [Query, Framework]
+    types,
+    
+    outputs: {
+      schema: join(process.cwd(), "schema.graphql"), // 2
+      typegen: join(process.cwd(), "nexus-typegen.ts"), // 3
+    },
+    contextType: {
+      module: join(process.cwd(), "./lib/client.ts"),
+      export: "Context"
+    }
 })
 
 const server =  new ApolloServer({
     introspection: true,
-    schema
+    schema,
+    context
 })
 
 const startServer = server.start()

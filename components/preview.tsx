@@ -47,6 +47,7 @@ function Preview() {
         <div className="justify-center w-full gap-4 space-y-2 previewcard lg:flex lg:px-12">
           {peek.map((i, e) => (
             <PreviewCard
+              key={e}
               image={i["image"]}
               title={i["title"]}
               subtitle={i["subtitle"]}
@@ -91,7 +92,7 @@ function Preview() {
       </section>
       <section className="px-4 py-12 flex justify-center gap-4">
             {
-                [1,2,3,4,5,6].map((num)=> <Image src={`/svg/l${num}.svg`} height={30} width={100} alt=" " className=" h-5 w-auto object-contain" />)
+                [1,2,3,4,5,6].map((num)=> <Image src={`/svg/l${num}.svg`} height={30} width={100} key={num} alt=" " className=" h-5 w-auto object-contain" />)
             }
       </section>
     </>

@@ -3,6 +3,7 @@ import EventCard from './eventCard'
 import HorizontalScroll from './horizontalScroll'
 import Link from 'next/link';
 
+
 function EventList(props: {title: String, eventlist: string[], link: string}) {
     const {title, eventlist, link} = props;
   return (

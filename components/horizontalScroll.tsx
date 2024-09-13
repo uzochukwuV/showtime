@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 
 
+
 export default function HorizontalScroll(props: {eventlist: string[]}) {
   const {eventlist: items} = props
   const [selected, setSelected] = React.useState([]);
@@ -23,6 +24,8 @@ export default function HorizontalScroll(props: {eventlist: string[]}) {
           : currentSelected.concat(id),
       );
     };
+
+    
 
   return (
     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} scrollContainerClassName=' scrollContainer p-4' wrapperClassName=' h-[400px]' >

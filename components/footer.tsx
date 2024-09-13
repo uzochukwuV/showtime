@@ -5,11 +5,11 @@ function Footer() {
     <footer className='  w-full py-16 px-4 sm:px-8 md:px-16 transition-all duration-100 bg-[#151517] '>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 2xl:grid-cols-6 2xl:max-w-6xl mx-auto   place-items-start">
             {
-                footer.map((list)=>( <div className=' text-white pb-10 flex flex-col items-start gap-3  justify-start'>
+                footer.map((list, index)=>( <div key={index} className=' text-white pb-10 flex flex-col items-start gap-3  justify-start'>
                     {
                         list.map((el, i)=> {
-                            if(i == 0) return <h3 className=' uppercase  font-bold pb-4'>{el}</h3>
-                            return <p className=' font-medium text-[#a2a2a2] '>{el}</p>
+                            if(i == 0) return <h3 key={i} className=' uppercase  font-bold pb-4'>{el}</h3>
+                            return <p key={i} className=' font-medium text-[#a2a2a2] '>{el}</p>
                         })
                     }
                 </div>))
