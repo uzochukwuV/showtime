@@ -44,10 +44,10 @@ export default  function Home() {
           }}
         >
           <div className="w-full max-w-3xl text-center ">
-            <h1 className={`text-[48px] font-bold  hero-text  ${inter.className}`  }>
+            <h1 className={`md:text-[48px] text-xl font-bold  hero-text  ${inter.className}`  }>
               Find your next great experience.
             </h1>
-            <p className={`pb-[32px] pt-[16px] text-[24px] font-medium  text-[#c4c4c6] ${inter.className}`}>
+            <p className={`pb-[32px] pt-[16px] md:text-[24px] font-medium  text-[#c4c4c6] ${inter.className}`}>
               Sports · Music · Shows
             </p>
             <div aria-relevant="additions" aria-expanded  autoFocus className="flex items-center justify-center max-w-md px-4 mx-auto bg-white border-gray-500 rounded-lg shadow-md hover:outline-2 outline-gray-200 ">

@@ -7,12 +7,12 @@ import { useQuery, gql } from "@apollo/client";
 
 
 export const POSTS_QUERY = gql`
-query {
-    frameworks {
-      name
-      id
-    }
+query{
+  events {
+    id,
+    name
   }
+}
 `;
 
 function Navbar() {
@@ -44,15 +44,16 @@ function Navbar() {
         
     }
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error : {error.message}</p>;
+    if (loading) return <p className=' text-white'>Loading...</p>;
+    if (error) return <p className=' text-white'>Error : {error.message}</p>;
 
     console.log(data);
     
   return (
    <header className='' style={{boxShadow: "0 2px 8px rgba(0,0,0,.05),inset 0 -1px 0 rgba(0,0,0,.1)", background: "#0e0e0f"}}>
-        <div className=' flex justify-between items-center h-[60px] text-white px-[50px] relative '>
-            <ul role='list' className='flex items-center *:tracking-wider gap-10 text-[14px] font-bold uppercase list-none ' style={{fontFamily: "Arial"}}>
+        <div className=' flex justify-between items-center h-[60px] text-white px-6 md:px-[50px] relative '>
+        <Image src={"/svg/logo.svg"} width={120} height={30} alt='logo' priority className='object-cover md:hidden' />
+            <ul role='list' className='md:flex hidden items-center *:tracking-wider gap-10 text-[14px] font-bold uppercase list-none ' style={{fontFamily: "Arial"}}>
                 <li id='logo' className=' pe-4'>
                     <Image src={"/svg/logo.svg"} width={120} height={30} alt='logo' priority className='object-cover ' />
                 </li>

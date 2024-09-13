@@ -24,22 +24,22 @@ type AppPropsWithLayout = AppProps & {
  
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const client = new ApolloClient({
-    uri: "http://localhost:3000/api/graphql",
+    uri: "http://localhost:5000/api/graphql",
     cache: new InMemoryCache(),
   });
 
-  // client
-  //   .query({
-  //     query: gql`
-  //     query {
-  //       frameworks {
-  //         name
-  //         id
-  //       }
-  //     }
-  //     `,
-  //   })
-  //   .then((result) => console.log(result));
+  client
+    .query({
+      query: gql`
+      query{
+  events {
+    id,
+    name
+  }
+}
+      `,
+    })
+    .then((result) => console.log(result));
   
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page)
