@@ -18,7 +18,7 @@ model Event {
   subcategory   SubCategory @relation(fields: [subcategoryId], references: [id])
   subcategoryId Int
   name          String
-  date          DateTime
+  date          String
   location      Location    @relation(fields: [locationId], references: [id])
   locationId    Int
   ticketFee     Int
